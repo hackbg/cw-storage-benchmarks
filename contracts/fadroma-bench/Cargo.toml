@@ -7,5 +7,5 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-fadroma = { version = "0.8.7", features = ["scrt"] }
+fadroma = { version = "0.8.8", features = ["scrt"] }
 serde = { version = "1.0" }
