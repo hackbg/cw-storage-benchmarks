@@ -1,0 +1,13 @@
+[package]
+name = "toolkit-bench"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+cosmwasm-std = { git = "https://github.com/scrtlabs/cosmwasm", tag = "v1.1.9-secret" }
+secret-toolkit = { git = "https://github.com/scrtlabs/secret-toolkit", tag = "v0.8.1", default-features = false, features = ["storage"] }
+serde = { version = "1.0" }
+schemars = { version = "0.8.11" }
