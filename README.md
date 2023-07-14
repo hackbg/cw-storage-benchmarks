@@ -41,11 +41,11 @@ the values inserted, collecting them into a Vec to include in the response
 (just so that we have something to do with those values). Finally, it removes
 all the values previously inserted from the map.
 
-The result is, even when bypassing Fadroma's binary serialization by using JSON, it is still
-slightly more efficient.
+The result is, even when bypassing Fadroma's binary serialization by using JSON,
+it is still slightly more efficient.
 
-|N items|Fadroma Bin|Fadroma JSON|secret-toolkit|
-|-------|-----------|------------|--------------|
-|10     |47472      |50071       |51318         |
-|100    |147534     |170392      |182156        |
-|1000   |1138502    |1369681     |1482880       |
+|N items|secret-toolkit (baseline)|Fadroma (w/ JSON serialization)|Fadroma (w/ binary serialization)|
+|-------|--------------|------------------------------------------|---------------------------------|
+|10     |51318         |50071   (2.43% cheaper)                   |47472   (7.49% cheaper)          |
+|100    |182156        |170392  (6.46% cheaper)                   |147534  (19.01% cheaper)         |
+|1000   |1482880       |1369681 (7.63% cheaper)                   |1138502 (23.22% cheaper)         |
