@@ -47,5 +47,9 @@ it is still slightly more efficient.
 |N items|secret-toolkit (baseline)|Fadroma (w/ JSON serialization)|Fadroma (w/ binary serialization)|
 |-------|--------------|------------------------------------------|---------------------------------|
 |10     |51318         |50071   (2.43% cheaper)                   |47472   (7.49% cheaper)          |
+|20     |65834         |63556   (3.46% cheaper)                   |58479   (11.17% cheaper)         |
+|50     |109160        |103702  (5.00% cheaper)                   |91792   (15.91% cheaper)         |
 |100    |182156        |170392  (6.46% cheaper)                   |147534  (19.01% cheaper)         |
+|200    |325335        |303299  (6.77% cheaper)                   |256324  (21.21% cheaper)         |
+|500    |759707        |703917  (7.34% cheaper)                   |586556  (22.79% cheaper)         |
 |1000   |1482880       |1369681 (7.63% cheaper)                   |1138502 (23.22% cheaper)         |
