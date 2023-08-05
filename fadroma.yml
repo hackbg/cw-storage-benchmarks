@@ -1,0 +1,9 @@
+templates:
+  fadroma-bench:
+    revision: HEAD
+    workspace: /home/anon/lab/blockchain/cosmos/cw-storage-benchmarks
+    crate: fadroma-bench
+  toolkit-bench:
+    revision: HEAD
+    workspace: /home/anon/lab/blockchain/cosmos/cw-storage-benchmarks
+    crate: toolkit-bench
