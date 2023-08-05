@@ -2,14 +2,14 @@ import { Client, Deployment } from '@fadroma/agent'
 
 export default class CwStorageBenchmarks extends Deployment {
 
-  fadroma-bench = this.contract({
+  fadromaBench = this.contract({
     name: "fadroma-bench",
     crate: "fadroma-bench",
     client: FadromaBench,
     initMsg: async () => ({})
   })
 
-  toolkit-bench = this.contract({
+  toolkitBench = this.contract({
     name: "toolkit-bench",
     crate: "toolkit-bench",
     client: ToolkitBench,
