@@ -32,6 +32,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8c3c1a368f70d6cf7302d78f8f7093da241fb8e8807c05cc9e51a125895a6d5b"
 
 [[package]]
+name = "bincode2"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f49f6183038e081170ebbbadee6678966c7d54728938a3e7de7f4e780770318f"
+dependencies = [
+ "byteorder",
+ "serde",
+]
+
+[[package]]
 name = "block-buffer"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -237,7 +247,7 @@ dependencies = [
 
 [[package]]
 name = "fadroma-bench"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "fadroma",
  "serde",
@@ -525,6 +535,47 @@ dependencies = [
 ]
 
 [[package]]
+name = "secret-cosmwasm-storage"
+version = "1.1.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "58882813e4d4462c480feb1333a63834425d7cf42f320793e3cf1d0290b22374"
+dependencies = [
+ "secret-cosmwasm-std",
+ "serde",
+]
+
+[[package]]
+name = "secret-toolkit"
+version = "0.9.0"
+source = "git+https://github.com/scrtlabs/secret-toolkit?tag=v0.9.0#95428dd1e9cd4e653f8a8b0aa82fd7ca31ac6e9f"
+dependencies = [
+ "secret-toolkit-serialization",
+ "secret-toolkit-storage",
+]
+
+[[package]]
+name = "secret-toolkit-serialization"
+version = "0.9.0"
+source = "git+https://github.com/scrtlabs/secret-toolkit?tag=v0.9.0#95428dd1e9cd4e653f8a8b0aa82fd7ca31ac6e9f"
+dependencies = [
+ "bincode2",
+ "schemars",
+ "secret-cosmwasm-std",
+ "serde",
+]
+
+[[package]]
+name = "secret-toolkit-storage"
+version = "0.9.0"
+source = "git+https://github.com/scrtlabs/secret-toolkit?tag=v0.9.0#95428dd1e9cd4e653f8a8b0aa82fd7ca31ac6e9f"
+dependencies = [
+ "secret-cosmwasm-std",
+ "secret-cosmwasm-storage",
+ "secret-toolkit-serialization",
+ "serde",
+]
+
+[[package]]
 name = "serde"
 version = "1.0.181"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -675,9 +726,12 @@ dependencies = [
 
 [[package]]
 name = "toolkit-bench"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
- "fadroma",
+ "schemars",
+ "secret-cosmwasm-std",
+ "secret-cosmwasm-storage",
+ "secret-toolkit",
  "serde",
 ]
 
