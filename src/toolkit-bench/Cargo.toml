@@ -1,15 +1,16 @@
 [package]
 name = "toolkit-bench"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
-authors = []
-keywords = ["fadroma"]
-description = ""
-readme = "README.md"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-fadroma = { version = "^0.8.7", features = ["scrt"] }
-serde = { version = "1.0.114", default-features = false, features = ["derive"] }
+cosmwasm-std = { package = "secret-cosmwasm-std", version = "1.1.10", features = ["random"] }
+secret-toolkit = { git = "https://github.com/scrtlabs/secret-toolkit", tag = "v0.9.0", default-features = false, features = ["storage"] }
+serde = { version = "1.0" }
+schemars = { version = "0.8.11" }
+
+[target.'cfg(not(target_arch="wasm32"))'.dependencies]
+cosmwasm-storage = { package = "secret-cosmwasm-storage", version = "1.1.10", default-features = false, features = ["iterator"] }
